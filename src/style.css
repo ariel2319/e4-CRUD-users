@@ -1,0 +1,313 @@
+:root{
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 20px;
+  --btn-color-green: rgb(64,170,87);
+  --btn-color-red: rgb(155, 34, 56);
+  --color-1: #fff;
+  --color-2: #333;
+  --color-3: crimson;
+  --color-4: dodgerblue;
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--color-1);
+  color: var(--color-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* *************************** TITLE *************************** */
+.title{
+  padding-top: 25px;
+  display: grid;/* 
+  position: relative; */
+  grid-template-columns: repeat(2, 1fr);  
+  padding-right: 10px;
+}
+.title .btn{
+  /* position: absolute; */
+  margin: 0  90% ;
+}
+.line{
+  width: 900px;
+  height: 2px;
+  margin: 0 0 20px 0;
+  background-color: var(--color-3);
+}
+.container{
+  width: 1000px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+@media screen and (max-width:1000px) {
+  .container{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .line{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .title{
+    width: 80%;
+    margin: 0 auto;
+  }  
+}
+
+/* *************************** CARD *************************** */
+.container .card{
+  position: relative;
+}
+.card{
+  --bs-card-border-color: transparent;
+  --bs-card-bg: transparent;
+}
+.container .card .face {
+  width: 300px;
+  height: 200px;
+  transition: 0.7s;
+}
+
+.container .card .face.face1 {
+  position: relative;
+  background: var(--color-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+
+.container .card:hover .face.face1{
+  background: var(--color-3);
+  transform: translateY(0);
+}
+
+.container .card .face.face1 .content{
+  opacity: 0.4;
+  transition: 0.5s;
+}
+
+.container .card:hover .face.face1 .content{
+  opacity: 1;
+}
+
+.container .card .face.face1 .content h3{
+  margin: 10px 0 0;
+  padding: 0;
+  color: var(--color-1);
+  text-align: center;
+  font-size: 1.6em;
+}
+
+.container .card .face.face2{
+  position: relative;
+  background: var(--color-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(46, 33, 33, 0.8);
+  transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2{
+  transform: translateY(0);
+}
+
+.container .card .face.face2 .content .p{
+  margin: 20px 0;
+  padding: 0;
+}
+
+
+/* *************************** BUTTON *************************** */
+.info-btn{
+  display: flex;
+  column-gap: 25px;
+  justify-content: space-around;
+  
+}
+.btn{
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: black;
+  border-radius: 50%;
+  outline: 3px solid transparent;
+  transition-property: outline-offset, outline-color, background-color;
+  transition-duration: .25s;
+  margin: 10px;
+  cursor: pointer;
+}
+.btn:hover{
+  outline-offset: 4px;
+}
+.btn:hover i {
+  animation: shake .25s;
+}
+.form-btn{
+  width: 80px;
+  height: auto;
+  font-size: 16px;
+  border-radius: 3px;
+}
+.form-btn:hover{
+  background: var(--color-3);
+  color: var(--color-1);
+  animation: shake 0.25s;
+}
+/* 
+.delete-btn{
+  background-color: var(--btn-color-red);
+} */
+.delete-btn:hover {
+  background-color: var(--color-3);
+  outline-color:var(--color-3);
+}
+
+.select-btn:hover{
+  background-color: var(--btn-color-green);
+  outline-color: var(--btn-color-green);
+} 
+.add-btn:hover{
+  background-color: var(--color-4);
+  outline-color: var(--color-4) ;
+}
+@keyframes shake {
+  10%{transform: rotate(15deg);}
+  20%{transform: rotate(-15deg);}
+  30%{transform: rotate(15deg);}
+  40%{transform: rotate(-15deg);}
+}
+
+.btn-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/* *************************** FORM *************************** */
+.form-mayor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width:600px) {
+  .form-container{
+    width:250px;
+  }
+}
+
+.form-container{
+  border: 1px solid transparent;
+  border-radius: 2px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+  width: 300px;
+  padding: 10px;
+  margin: 5px;
+}
+.accept:hover{
+  background: var(--btn-color-green);
+}
+.close:hover{
+  background: var(--btn-color-red);
+}
+
+input{
+  width: 100%;
+  height: 18px;
+  text-align: center;
+  margin: 6px 0;
+  border: 1px solid rgba(10, 34, 61, 0.171);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+.lineModal{
+  width: 95%;
+  height: 2px;
+  align-self: center;
+  background-color: var(--color-3);
+} 
+
+
+
+/* *************************** LOADER *************************** */
+
+
+
+@keyframes pulse {
+  0%{transform: scale(0.15); opacity: 0;}
+  50%{opacity: 1;}
+  100%{transform: scale(1);opacity: 0;}  
+}
+.loader {
+  margin: 30px 0 15px 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-3);
+  animation: pulse 0.85s infinite linear;
+} 
+
+
+/* *************************** BALL *************************** */
+/* .ball-container{
+  background: var(--color-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  overflow: hidden;
+}
+
+.ball{
+  animation: float 2.5s ease-in-out infinite;
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 75% 30%, white 5px, #DF00FF 8%, #DB9EDF 60%, #DF00FF 100%);
+  
+  box-shadow: inset 0 0 20px #C1AAC6, 
+              inset 10px 0 46px #DF00FF, 
+              inset 88px 0px 60px #DB9EDF, 
+              inset -20px -60px 100px #fde9ea, 
+              inset 0 50px 140px #fde9ea, 
+              0 0 90px #fff;
+}
+
+@keyframes float {
+  0%{transform: translateY(30px);}
+  50%{transform: translateY(-30px);}
+  100%{transform: translateY(30px);}
+}
+
+.shadow{
+  background: #DB9EDF;
+  width: 150px;
+  height: 40px;
+  top: 70%;
+  animation: expand 4s infinite;
+  position: absolute;
+  border-radius: 50%;
+}
+
+@keyframes expand {
+  0%, 100% {transform: scale(0.5);}
+  50%{transform: scale(1);}
+}  */
